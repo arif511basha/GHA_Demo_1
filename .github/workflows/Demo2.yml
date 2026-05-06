@@ -8,6 +8,7 @@ jobs:
           run: 
             echo "build successful"
     test: 
+       needs: build
        runs-on: ubuntu-latest
        steps:
          - name: test-stage
@@ -15,6 +16,7 @@ jobs:
              echo "test successful"
 
     deploy:
+       needs: test
        runs-on: ubuntu-latest
        steps:
          - name: deploy-stage
