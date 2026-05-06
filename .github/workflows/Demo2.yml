@@ -6,8 +6,8 @@ jobs:
       steps:
         -  name: demo2-step
            run: |
-             echo: "1st"
-             echo: "2nd"
+             echo: "one"
+             echo: "two"
   
   
   
