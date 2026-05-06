@@ -1,13 +1,29 @@
 name: demo2-practice
 on: workflow_dispatch
 jobs:
-    Demo2-job:
+    build:
       runs-on: ubuntu-latest
       steps:
-        -  name: demo2-step
-           run: |
-             echo "one"
-             echo "two"
-  
+        - name: build-stage
+          run: 
+            echo "build successful"
+    test: 
+       runs-on: ubuntu-latest
+       steps:
+         - name: test-stage
+           run: 
+             echo "test successful"
+
+    deploy:
+       runs-on: ubuntu-latest
+       steps:
+         - name: deploy-stage
+           run: 
+             echo "deply suuceesfully"
+             
+         
+
+        
+    
   
   
