@@ -1,0 +1,8 @@
+name: hellow world
+  on: workflow dispatch
+    jobs:
+      hello:
+        runs-on: ubuntu-latest
+        steps:
+           name: hello-step
+             run: echo "woelcpme to hellow world"
