@@ -5,7 +5,9 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         -  name: demo2-step
-           run: echo "welcome"
+           run: |
+             echo: "1st"
+             echo: "2nd"
   
   
   
