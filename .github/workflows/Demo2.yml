@@ -2,10 +2,10 @@ name: demo2-practice
 on: workflow_dispatch
 jobs:
    demo2-job:
-   runs-on: ubuntu-latest
-   steps:
-     -name: demo2-step
-      run: echo "welcome"
+      runs-on: ubuntu-latest
+      steps:
+        -  name: demo2-step
+           run: echo "welcome"
   
   
   
