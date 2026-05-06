@@ -1,1 +1,17 @@
+name: Display HTML Content
 
+on:
+  workflow_dispatch:
+
+jobs:
+  display-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Display index.html Content
+        run: |
+          echo "===== INDEX.HTML CONTENT ====="
+          cat index.html
