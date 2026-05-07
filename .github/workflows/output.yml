@@ -1,0 +1,16 @@
+name: output-workflow
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: build step
+        id: build
+        run: echo "version=0.0.1" >> $GITHUB_OUTPUT
+
+      - name: deploy step
+        run: echo "output is ${{ steps.build.outputs.version }}"
