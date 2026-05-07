@@ -8,3 +8,4 @@ jobs:
         run:  |
           echo: "who is trigger ${{github.actor}}"
           echo: "Repo name is ${{github.repository}}"
+          echo: "commit id is ${{github.sha}}"
