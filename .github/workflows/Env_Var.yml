@@ -1,0 +1,10 @@
+name: environmentVar
+on: workflow_dispatch
+env:
+  app: arif
+jobs:
+  Env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: env-step
+        run: echo "i am displaying my name: $app"
