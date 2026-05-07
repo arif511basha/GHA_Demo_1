@@ -6,6 +6,6 @@ jobs:
     steps:
       - name: context-step
         run:  |
-          echo: "who is trigger ${{github.actor}}"
-          echo: "Repo name is ${{github.repository}}"
-          echo: "commit id is ${{github.sha}}"
+          echo "who is trigger ${{github.actor}}"
+          echo "Repo name is ${{github.repository}}"
+          echo "commit id is ${{github.sha}}"
