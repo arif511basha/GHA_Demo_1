@@ -1,0 +1,14 @@
+name: if-condition
+on: workflow_dispatch
+jobs:
+  if-condition-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: valid-user
+        if: github.actor == 'arif511basha'
+        run: echo "you are the right person"
+
+      - name: invalid-user
+        if: github.actor != 'arif511basha'
+        run: echo 'not a valid user'
+        
