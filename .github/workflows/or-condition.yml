@@ -1,0 +1,9 @@
+name: or
+on: workflow_dispatch
+jobs:
+  or-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: or-step
+        if: github.actor == 'arif511basha' || github.actor == 'rafi'
+        run: echo "our job excuted"
