@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: valid-user
-        if: github.actor == 'arif511basha'
+        if: github.actor == 'arif511bash'
         run: echo "you are the right person"
 
       - name: invalid-user
