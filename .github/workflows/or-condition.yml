@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: or-step
-        if: github.actor == 'arif511basha' || github.actor == 'rafi'
+        if: github.actor == 'arif511bash' || github.actor == 'rafi'
         run: echo "our job excuted"
