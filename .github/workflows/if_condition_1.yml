@@ -8,7 +8,7 @@ on:
        - prod
 jobs:
     dev:
-        if : github.ref == 'dev' && github.event_name == 'push'
+        if : startsWith(github.ref_name, 'dev') && github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
           - name: dev-stage
@@ -16,7 +16,7 @@ jobs:
               echo "dev successful"
 
     feture:
-        if : github.ref == 'feature' && github.event_name == 'push'
+        if : startsWith(github.ref_name, 'feature') && github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
           - name: feature-stage
@@ -24,7 +24,7 @@ jobs:
               echo "feature successful"
               
     prod:
-        if : github.ref == 'prod' && github.event_name == 'push'
+        if : startsWith(github.ref_name, 'prod') && github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
           - name: prod-stage
