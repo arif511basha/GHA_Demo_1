@@ -1,4 +1,4 @@
-name: output-workflow
+name: def-workflow
 
 on:
   push:
