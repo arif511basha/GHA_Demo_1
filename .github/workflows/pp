@@ -1,0 +1,52 @@
+name: pp
+
+on:
+  push:
+    branches:
+      - dev
+      - feature
+      - prod
+
+jobs:
+
+  dev:
+    if: github.ref_name == 'dev'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: dev-stage
+        run: echo "dev successful"
+
+  feature:
+    if: github.ref_name == 'feature'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: feature-stage
+        run: echo "feature successful"
+
+  prod:
+    if: github.ref_name == 'prod'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: prod-stage
+        run: echo "prod successful"
+
+  success_notify:
+    needs: [dev, feature, prod]
+    if: success()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: success-notify
+        run: echo "success notify"
+
+  failure_notify:
+    needs: [dev, feature, prod]
+    if: failure()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: failure-notify
+        run: echo "failure notify"
