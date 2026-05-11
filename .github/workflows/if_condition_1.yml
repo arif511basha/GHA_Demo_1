@@ -1,6 +1,6 @@
 name: if-condition-demo
 on: 
-    push:
+    workflow_dispatch:
       branches:
        - main
        - dev
