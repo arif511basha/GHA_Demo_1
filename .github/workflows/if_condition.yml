@@ -1,4 +1,4 @@
-name: if-condition
+name: if-condition1
 on: workflow_dispatch
 jobs:
   if-condition-job:
