@@ -8,12 +8,12 @@ on:
        - prod
 jobs:
     dev:
-        if : github.ref == 'main' && github.event_name == 'push'
+        if : github.ref == 'dev' && github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
-          - name: main-stage
+          - name: dev-stage
             run: 
-              echo "main successful"
+              echo "dev successful"
 
     feture:
         if : github.ref == 'feature' && github.event_name == 'push'
