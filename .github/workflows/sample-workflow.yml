@@ -1,0 +1,22 @@
+name: sample-workflow
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Print Branch Name
+        run: echo "Current branch is ${{ github.ref_name }}"
+
+      - name: Print Success Message
+        run: echo "GitHub Actions workflow executed successfully"
