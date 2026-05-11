@@ -3,10 +3,10 @@ name: if-condition-demo
 on:
   push:
     branches:
-      - main
       - dev
       - feature
       - prod
+
 jobs:
 
   dev:
