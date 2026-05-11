@@ -1,0 +1,21 @@
+name: def
+
+on:
+  push:
+
+jobs:
+  build:
+    outputs:
+      version: ${{steps.build.outputs.version}}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: build step
+        id: build
+        run: echo "version=0.0.1" >> $GITHUB_OUTPUT
+  deploy:
+     needs: build
+     runs-on: ubuntu-latest
+     steps:
+       - name: deploy stage
+         run: echo "above op is ${{needs.build.outputs.version}}"
