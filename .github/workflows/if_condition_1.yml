@@ -7,7 +7,6 @@ on:
       - dev
       - feature
       - prod
-
 jobs:
 
   dev:
