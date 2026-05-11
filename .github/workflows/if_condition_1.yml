@@ -1,0 +1,48 @@
+name: if-condition-demo
+on: 
+    push:
+      branches:
+       - main
+       - dev
+       - feature
+       - prod
+jobs:
+    dev:
+        if : github.ref == 'main' && github.event_name == 'push'
+        runs-on: ubuntu-latest
+        steps:
+          - name: main-stage
+            run: 
+              echo "main successful"
+
+    feture:
+        if : github.ref == 'feature' && github.event_name == 'push'
+        runs-on: ubuntu-latest
+        steps:
+          - name: feature-stage
+            run: 
+              echo "feature successful"
+              
+    prod:
+        if : github.ref == 'prod' && github.event_name == 'push'
+        runs-on: ubuntu-latest
+        steps:
+          - name: prod-stage
+            run: 
+              echo "prod successful"
+              
+    success_notify:
+        if: always() && !failure()
+        runs-on: ubuntu-latest
+        steps:
+          - name: success-notify
+            run: 
+              echo "success notify"
+              
+    failure_notify:
+        if: failure()
+        runs-on: ubuntu-latest
+        steps:
+          - name: failure-notify
+            run: 
+              echo "failure notify"          
