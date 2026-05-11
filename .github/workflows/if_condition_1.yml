@@ -46,7 +46,7 @@ jobs:
     needs: [dev, feature, prod]
     if: failure()
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: failure-notify
         run: echo "failure notify"
